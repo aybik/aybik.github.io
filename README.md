@@ -1,1 +1,0 @@
-# aybik.github.io
