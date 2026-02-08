@@ -231,24 +231,24 @@ h1, h2, h3, h4 {
   body {
     font-size: 15px;
   }
-  
+
   .custom-intro h1 {
     font-size: 1.65rem;
   }
-  
+
   .custom-intro p {
     font-size: 0.9rem;
   }
-  
+
   .project-card-header,
   .project-card-body {
     padding: 1.25rem;
   }
-  
+
   .section-header h2 {
     font-size: 1.35rem;
   }
-  
+
   .dark-mode-toggle {
     bottom: 1rem;
     right: 1rem;
@@ -268,7 +268,7 @@ h1, h2, h3, h4 {
   <div class="section-header">
     <h2>Featured Projects</h2>
   </div>
-  
+
   <div class="project-card">
     <div class="project-card-header">
       <h3>Disclosure-Driven ML Trading (BIST)</h3>
@@ -285,6 +285,23 @@ h1, h2, h3, h4 {
       <a href="/projects/bist-ml-trading/" class="project-link">Explore the project</a>
     </div>
   </div>
+
+  <div class="project-card">
+    <div class="project-card-header">
+      <h3>Automated Event Classification (Etko)</h3>
+      <div class="project-tags">
+        <span class="project-tag">BERT</span>
+        <span class="project-tag">Turkish NLP</span>
+        <span class="project-tag">Production System</span>
+        <span class="project-tag">Class Imbalance</span>
+      </div>
+    </div>
+    <div class="project-card-body">
+      <p>A BERT-based NLP system that automatically classifies cultural events into 37 subcategories. Integrated into Etko's data ingestion pipeline, achieving 93% accuracy on Turkish-language events with smart handling of class imbalance through data-centric approaches.</p>
+      <p>Powers event discovery, filtering, and SEO across multiple ticketing platforms with configurable confidence thresholds and continuous monitoring.</p>
+      <a href="/projects/etko-event-classification/" class="project-link">Explore the project</a>
+    </div>
+  </div>
 </div>
 
 <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
@@ -293,7 +310,7 @@ h1, h2, h3, h4 {
 function toggleDarkMode() {
   var body = document.body;
   var button = document.querySelector('.dark-mode-toggle');
-  
+
   if (body.classList.contains('dark-mode')) {
     body.classList.remove('dark-mode');
     button.textContent = '🌙';
@@ -314,7 +331,7 @@ window.addEventListener('load', function() {
   try {
     savedTheme = localStorage.getItem('theme') || 'light';
   } catch (e) {}
-  
+
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
     document.querySelector('.dark-mode-toggle').textContent = '☀️';
