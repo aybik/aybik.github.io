@@ -30,7 +30,6 @@ body.dark-mode {
   --shadow-color: rgba(0,0,0,0.3);
 }
 
-/* Hide duplicate author name */
 .sidebar .author__name {
   display: none !important;
 }
@@ -227,11 +226,13 @@ hr {
   <p class="project-subtitle">Event-aware feature engineering, leakage-safe labels, and realistic backtests</p>
 </div>
 
-<div class="project-detail-page">
+<div class="project-detail-page" markdown="1">
 
 ## Overview
 
-This project investigates whether public company disclosures contain predictive information for short-horizon stock returns on Borsa İstanbul (BIST). I built an end-to-end, leakage-aware machine learning pipeline that:
+This project investigates whether public company disclosures contain predictive information for short-horizon stock returns on Borsa İstanbul (BIST). 
+
+I built an end-to-end, leakage-aware machine learning pipeline that:
 
 - Aligns disclosures to tradable timestamps using exchange-aware calendars
 - Engineers price-based and event-based features with strict temporal discipline
@@ -305,7 +306,9 @@ This ensures that features and labels reflect what was **actually knowable and a
 
 ### 2. Data Leakage Prevention
 
-Financial ML is notorious for leakage—using information that wouldn't have been available when making the prediction. Common mistakes include:
+Financial ML is notorious for leakage—using information that wouldn't have been available when making the prediction. 
+
+Common mistakes include:
 
 - Computing technical indicators with look-ahead bias
 - Using same-day closing prices for next-day predictions
