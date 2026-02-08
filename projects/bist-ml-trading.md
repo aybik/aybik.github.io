@@ -6,6 +6,197 @@ author_profile: true
 classes: wide
 ---
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Manrope:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-dark: #1a1a2e;
+  --primary-blue: #0f3460;
+  --accent-teal: #16a085;
+  --accent-coral: #e94560;
+  --bg-color: #ffffff;
+  --card-bg: #ffffff;
+  --text-dark: #2c3e50;
+  --border-color: rgba(0,0,0,0.06);
+  --shadow-color: rgba(0,0,0,0.07);
+}
+
+body.dark-mode {
+  --primary-dark: #ecf0f1;
+  --text-dark: #ecf0f1;
+  --bg-color: #1a1a2e;
+  --card-bg: #252541;
+  --border-color: rgba(255,255,255,0.1);
+  --shadow-color: rgba(0,0,0,0.3);
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.project-header-banner {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #1a1a2e 100%);
+  margin: -2rem -2rem 2.5rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-header-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(22, 160, 133, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(233, 69, 96, 0.15) 0%, transparent 50%);
+}
+
+.project-header-banner h1 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+  line-height: 1.3;
+}
+
+.project-subtitle {
+  color: rgba(255,255,255,0.9);
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.project-detail-page {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.project-detail-page h2 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--accent-teal);
+}
+
+.project-detail-page h3 {
+  font-size: 1.15rem;
+  color: var(--primary-blue);
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-detail-page p,
+.project-detail-page li {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-dark);
+  margin-bottom: 0.85rem;
+}
+
+.project-detail-page ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.25rem;
+}
+
+.project-detail-page ul li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.project-detail-page ul li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent-teal);
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(22, 160, 133, 0.08), rgba(15, 52, 96, 0.05));
+  border-left: 4px solid var(--accent-teal);
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.highlight-box p {
+  margin-bottom: 0;
+}
+
+.highlight-box strong {
+  color: var(--accent-teal);
+}
+
+pre, code {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+}
+
+pre {
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  line-height: 1.4;
+}
+
+code {
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+  color: var(--accent-teal);
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--border-color);
+  margin: 2rem 0;
+}
+
+.page__content {
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .project-header-banner {
+    margin: -1rem -1rem 2rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .project-header-banner h1 {
+    font-size: 1.65rem;
+  }
+  
+  .project-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .project-detail-page h2 {
+    font-size: 1.35rem;
+  }
+}
+</style>
+
 <div class="project-header-banner">
   <h1>Disclosure-Driven ML Trading on Borsa İstanbul</h1>
   <p class="project-subtitle">Event-aware feature engineering, leakage-safe labels, and realistic backtests</p>
@@ -37,6 +228,7 @@ The goal isn't just prediction accuracy—it's building a system that could actu
 Public disclosures are one of the few **legally exploitable information sources** in equity markets. Unlike insider information or material non-public data, disclosure-based signals are available to all market participants simultaneously.
 
 However, transforming disclosures into tradable signals is non-trivial:
+
 - **Timing matters:** When can you actually trade after a disclosure?
 - **Market microstructure:** Holidays, early closes, trading halts
 - **Data leakage:** It's surprisingly easy to accidentally use future information
@@ -55,6 +247,7 @@ This project addresses these challenges systematically.
 
 ### Data Attribution Note
 Raw data ingestion from KAP and BIST is **not my original contribution**. My work begins after raw data is available and focuses on:
+
 - Data cleaning and quality validation
 - Timestamp alignment and calendar management
 - Feature engineering and label construction
@@ -68,12 +261,14 @@ Raw data ingestion from KAP and BIST is **not my original contribution**. My wor
 ### 1. Disclosure Timing & Tradability
 
 Disclosures arrive at various times:
+
 - During trading hours (immediate impact)
 - After market close (next-day tradability)
 - On weekends or holidays (delayed tradability)
 - During trading halts (complex handling)
 
 **Solution:** Every disclosure is anchored to the **first tradable timestamp** using an exchange-aware calendar that accounts for:
+
 - Regular trading days and hours
 - National holidays and religious observances
 - Early market closes and half-days
@@ -84,12 +279,14 @@ This ensures that features and labels reflect what was **actually knowable and a
 ### 2. Data Leakage Prevention
 
 Financial ML is notorious for leakage—using information that wouldn't have been available when making the prediction. Common mistakes include:
+
 - Computing technical indicators with look-ahead bias
 - Using same-day closing prices for next-day predictions
 - Cross-sectional statistics that include future data
 - Label leakage through feature engineering
 
 **Solution:** Implemented multiple safeguards:
+
 - All price-based features are **strictly lagged**
 - Cross-sectional statistics computed using **only prior-day information**
 - Automated diagnostics to flag potential leakage
@@ -99,16 +296,19 @@ Financial ML is notorious for leakage—using information that wouldn't have bee
 ### 3. Realistic Label Construction
 
 Labels must represent **tradable forward returns** from decision time T to horizon T+H, accounting for:
+
 - Trading-day counting (not calendar days)
 - Transaction costs and slippage assumptions
 - Stock-specific liquidity constraints
 
 **Implementation:**
+
 - **D1 labels:** Next trading day returns
 - **D5 labels:** Five trading days forward
 - **D20 labels:** Twenty trading days forward
 
 Multiple label types supported:
+
 - Binary classification (above/below threshold)
 - Regression targets (raw returns)
 - Ranking consensus (for portfolio construction)
@@ -194,6 +394,7 @@ All features undergo **strict temporal validation** to ensure no look-ahead bias
 
 ### Algorithm Choice
 **LightGBM** gradient boosted decision trees for:
+
 - Strong performance on tabular data
 - Native handling of missing values
 - Fast training on medium-sized datasets
@@ -207,6 +408,7 @@ All features undergo **strict temporal validation** to ensure no look-ahead bias
 
 ### Hyperparameter Optimization
 Focus on parameters that matter for generalization:
+
 - Tree depth and number of leaves
 - Learning rate and number of boosting rounds
 - Feature subsampling ratios
@@ -228,16 +430,19 @@ Models are evaluated at multiple levels:
 The ultimate test: **Can this actually make money?**
 
 **Strategy:**
+
 - Long-only daily rebalancing
 - Top-N stocks by predicted return
 - Equal-weight or score-weighted allocation
 
 **Realistic Assumptions:**
+
 - Transaction costs (bid-ask spread + commission)
 - No intraday execution modeling (conservative)
 - No leverage or shorting (simple baseline)
 
 **Metrics:**
+
 - Sharpe ratio and risk-adjusted returns
 - Maximum drawdown
 - Win rate and profit factor
@@ -268,22 +473,26 @@ The ultimate test: **Can this actually make money?**
 ### Potential Extensions
 
 **NLP Enhancement**
+
 - Sentiment analysis of disclosure text
 - Topic modeling and event classification
 - Named entity recognition for key information
 
 **Model Improvements**
+
 - Regime-aware models (bull/bear/sideways)
 - Sector-specific or conditional models
 - Ensemble approaches combining multiple signals
 
 **Execution Realism**
+
 - Intraday execution modeling
 - Market impact estimation
 - Liquidity-aware position sizing
 - Optimal execution algorithms
 
 **Robustness Testing**
+
 - Stress testing across crisis periods
 - Sensitivity to feature engineering choices
 - Out-of-sample validation on new time periods
@@ -316,7 +525,3 @@ The ultimate test: **Can this actually make money?**
 - Standard quantitative finance evaluation frameworks
 
 </div>
-
-<style>
-  @import url('/assets/css/custom.css');
-</style>
