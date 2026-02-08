@@ -1,11 +1,39 @@
 ---
-title: "Hi, I’m Aybike."
+title: "Hi, I'm Aybike."
 layout: single
+author_profile: true
+classes: wide
 ---
 
-I work with applied data analysis and machine learning, with a background across engineering and social sciences. I care about data quality, assumptions, and how analytical results get used in real settings.
+<div class="custom-intro">
+  <h1>Hi, I'm Aybike.</h1>
+  <p>I work with applied data analysis and machine learning, bringing together perspectives from engineering and social sciences. I care deeply about data quality, transparent assumptions, and how analytical results translate into real-world decisions.</p>
+  <p>My focus is on building ML systems that work in practice—not just in notebooks—with particular attention to evaluation frameworks that reflect actual deployment constraints.</p>
+</div>
 
-## Featured projects
-### Disclosure-Driven ML Trading (BIST)
-Event-aware ML pipeline using public disclosures and leakage-safe evaluation.
-→ [Read project](/projects/bist-ml-trading/)
+<div class="featured-projects">
+  <div class="section-header">
+    <h2>Featured Projects</h2>
+  </div>
+  
+  <div class="project-card">
+    <div class="project-card-header">
+      <h3>Disclosure-Driven ML Trading (BIST)</h3>
+      <div class="project-tags">
+        <span class="project-tag">Event-Aware ML</span>
+        <span class="project-tag">Time-Series CV</span>
+        <span class="project-tag">Leakage Prevention</span>
+        <span class="project-tag">Realistic Backtesting</span>
+      </div>
+    </div>
+    <div class="project-card-body">
+      <p>An end-to-end ML pipeline that transforms public company disclosures into tradable signals on Borsa İstanbul. Features rigorous leakage prevention, exchange-aware timestamp alignment, and portfolio-level evaluation that accounts for real trading constraints.</p>
+      <p>This project demonstrates practical ML engineering: from messy real-world data to production-ready signals, with evaluation metrics that matter for actual deployment.</p>
+      <a href="/projects/bist-ml-trading/" class="project-link">Explore the project</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  @import url('/assets/css/custom.css');
+</style>
