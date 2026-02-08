@@ -46,30 +46,9 @@ h1, h2, h3, h4 {
   color: var(--text-dark);
 }
 
-/* Fix layout overlap - ensure proper grid */
-.page {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 64em) {
-  .page {
-    grid-template-columns: 300px 1fr;
-    gap: 2rem;
-  }
-  
-  .sidebar {
-    grid-column: 1;
-  }
-  
-  .page__content {
-    grid-column: 2;
-  }
-}
-
 .project-header-banner {
   background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
-  margin: -2rem -1rem 2rem;
+  margin: -2rem -2rem 2rem;
   padding: 2.5rem 2rem;
   text-align: center;
   position: relative;
@@ -108,8 +87,9 @@ h1, h2, h3, h4 {
 }
 
 .project-detail-page {
-  max-width: 100%;
-  padding: 0 1rem 2rem;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
 }
 
 .project-detail-page h2 {
@@ -221,7 +201,7 @@ hr {
   background: var(--card-bg);
 }
 
-@media (max-width: 64em) {
+@media (max-width: 768px) {
   .project-header-banner {
     margin: -1rem -1rem 1.5rem;
     padding: 2rem 1.5rem;
