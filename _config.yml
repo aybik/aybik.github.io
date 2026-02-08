@@ -10,10 +10,6 @@ plugins:
 
 minimal_mistakes_skin: "default"
 
-# Add custom CSS
-head_scripts:
-  - /assets/css/custom.css
-
 author:
   name: "Aybike Alkan"
   location: "Berlin"
