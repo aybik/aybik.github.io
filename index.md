@@ -47,13 +47,13 @@ h1, h2, h3, h4 {
 
 .custom-intro {
   max-width: 900px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 2.5rem;
   padding: 0 1.5rem;
 }
 
 .custom-intro h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 1.5rem;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 1.25rem;
   background: linear-gradient(135deg, var(--accent-teal), var(--accent-coral));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -61,21 +61,22 @@ h1, h2, h3, h4 {
 }
 
 .custom-intro p {
-  font-size: 1.25rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.65;
   color: var(--text-dark);
-  font-weight: 300;
+  font-weight: 400;
+  margin-bottom: 0.85rem;
 }
 
 .featured-projects {
   max-width: 1200px;
-  margin: 5rem auto;
+  margin: 2rem auto;
   padding: 0 1.5rem;
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  font-size: 1.85rem;
+  margin-bottom: 2rem;
   position: relative;
   display: inline-block;
 }
@@ -86,7 +87,7 @@ h1, h2, h3, h4 {
   bottom: -8px;
   left: 0;
   width: 60%;
-  height: 4px;
+  height: 3px;
   background: linear-gradient(90deg, var(--accent-teal), var(--accent-coral));
   border-radius: 2px;
 }
@@ -108,7 +109,7 @@ h1, h2, h3, h4 {
 
 .project-card-header {
   background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
-  padding: 2rem 2.5rem;
+  padding: 1.75rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -126,7 +127,7 @@ h1, h2, h3, h4 {
 
 .project-card-header h3 {
   color: white;
-  font-size: 1.75rem;
+  font-size: 1.4rem;
   margin-bottom: 0.75rem;
   position: relative;
   z-index: 1;
@@ -144,22 +145,22 @@ h1, h2, h3, h4 {
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(10px);
   color: white;
-  padding: 0.35rem 0.9rem;
+  padding: 0.3rem 0.75rem;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
   border: 1px solid rgba(255,255,255,0.2);
 }
 
 .project-card-body {
-  padding: 2.5rem;
+  padding: 2rem;
 }
 
 .project-card-body p {
-  font-size: 1.05rem;
-  line-height: 1.75;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: var(--text-dark);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .project-link {
@@ -170,6 +171,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
   text-decoration: none;
   font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
   transition: gap 0.3s ease;
 }
 
@@ -223,7 +225,11 @@ h1, h2, h3, h4 {
 
 @media (max-width: 768px) {
   .custom-intro h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+  
+  .custom-intro p {
+    font-size: 1rem;
   }
   
   .project-card-header,
@@ -232,7 +238,7 @@ h1, h2, h3, h4 {
   }
   
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 1.65rem;
   }
   
   .dark-mode-toggle {
