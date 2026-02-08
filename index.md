@@ -28,7 +28,6 @@ body.dark-mode {
   --shadow-color: rgba(0,0,0,0.3);
 }
 
-/* Hide duplicate author name */
 .sidebar .author__name {
   display: none !important;
 }
@@ -193,14 +192,14 @@ h1, h2, h3, h4 {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: var(--accent-teal);
+  background: #16a085;
   color: white;
   border: none;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 4px 12px var(--shadow-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   z-index: 1000;
   font-size: 1.5rem;
   display: flex;
@@ -211,7 +210,7 @@ h1, h2, h3, h4 {
 
 .dark-mode-toggle:hover {
   transform: scale(1.1);
-  background: var(--accent-coral);
+  background: #e94560;
 }
 
 .sidebar {
@@ -274,26 +273,37 @@ h1, h2, h3, h4 {
   </div>
 </div>
 
-<button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+<button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
 
 <script>
-const toggle = document.getElementById('darkModeToggle');
-const body = document.body;
-
-const currentTheme = localStorage.getItem('theme') || 'light';
-if (currentTheme === 'dark') {
-  body.classList.add('dark-mode');
-  toggle.textContent = '☀️';
+function toggleDarkMode() {
+  var body = document.body;
+  var button = document.querySelector('.dark-mode-toggle');
+  
+  if (body.classList.contains('dark-mode')) {
+    body.classList.remove('dark-mode');
+    button.textContent = '🌙';
+    try {
+      localStorage.setItem('theme', 'light');
+    } catch (e) {}
+  } else {
+    body.classList.add('dark-mode');
+    button.textContent = '☀️';
+    try {
+      localStorage.setItem('theme', 'dark');
+    } catch (e) {}
+  }
 }
 
-toggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-  if (body.classList.contains('dark-mode')) {
-    toggle.textContent = '☀️';
-    localStorage.setItem('theme', 'dark');
-  } else {
-    toggle.textContent = '🌙';
-    localStorage.setItem('theme', 'light');
+window.addEventListener('load', function() {
+  var savedTheme = 'light';
+  try {
+    savedTheme = localStorage.getItem('theme') || 'light';
+  } catch (e) {}
+  
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    document.querySelector('.dark-mode-toggle').textContent = '☀️';
   }
 });
 </script>
