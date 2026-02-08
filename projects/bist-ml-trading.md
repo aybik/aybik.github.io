@@ -30,9 +30,15 @@ body.dark-mode {
   --shadow-color: rgba(0,0,0,0.3);
 }
 
+/* Hide duplicate author name */
+.sidebar .author__name {
+  display: none !important;
+}
+
 body {
   background-color: var(--bg-color);
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
 }
 
 h1, h2, h3, h4 {
@@ -42,9 +48,9 @@ h1, h2, h3, h4 {
 }
 
 .project-header-banner {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, #1a1a2e 100%);
-  margin: -2rem -2rem 2.5rem;
-  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+  margin: -2rem -2rem 2rem;
+  padding: 2.5rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -60,12 +66,13 @@ h1, h2, h3, h4 {
   background: 
     radial-gradient(circle at 30% 20%, rgba(22, 160, 133, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 70% 80%, rgba(233, 69, 96, 0.15) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .project-header-banner h1 {
   color: white;
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.75rem;
+  margin-bottom: 0.65rem;
   position: relative;
   z-index: 1;
   line-height: 1.3;
@@ -73,7 +80,7 @@ h1, h2, h3, h4 {
 
 .project-subtitle {
   color: rgba(255,255,255,0.9);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 300;
   font-style: italic;
   position: relative;
@@ -83,43 +90,49 @@ h1, h2, h3, h4 {
 .project-detail-page {
   max-width: 850px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 2rem;
 }
 
 .project-detail-page h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--text-dark);
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
+  margin-top: 2.25rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.45rem;
   border-bottom: 3px solid var(--accent-teal);
 }
 
 .project-detail-page h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--primary-blue);
-  margin-top: 1.75rem;
-  margin-bottom: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.65rem;
 }
 
-.project-detail-page p,
-.project-detail-page li {
-  font-size: 0.95rem;
-  line-height: 1.65;
+.project-detail-page p {
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: var(--text-dark);
   margin-bottom: 0.85rem;
+}
+
+.project-detail-page li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin-bottom: 0.45rem;
 }
 
 .project-detail-page ul {
   list-style: none;
   padding-left: 0;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 .project-detail-page ul li {
-  padding-left: 1.5rem;
+  padding-left: 1.4rem;
   position: relative;
-  margin-bottom: 0.5rem;
 }
 
 .project-detail-page ul li::before {
@@ -134,65 +147,77 @@ h1, h2, h3, h4 {
 .highlight-box {
   background: linear-gradient(135deg, rgba(22, 160, 133, 0.08), rgba(15, 52, 96, 0.05));
   border-left: 4px solid var(--accent-teal);
-  padding: 1.25rem 1.5rem;
-  margin: 1.75rem 0;
+  padding: 1.15rem 1.4rem;
+  margin: 1.5rem 0;
   border-radius: 0 6px 6px 0;
 }
 
 .highlight-box p {
   margin-bottom: 0;
+  font-size: 0.9rem;
 }
 
 .highlight-box strong {
   color: var(--accent-teal);
-}
-
-pre, code {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  font-family: 'Space Mono', monospace;
-  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 pre {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   padding: 1rem;
   border-radius: 6px;
   overflow-x: auto;
   line-height: 1.4;
+  font-size: 0.8rem;
+  margin: 1rem 0;
 }
 
 code {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85em;
+  background: rgba(22, 160, 133, 0.08);
   padding: 0.15em 0.35em;
   border-radius: 3px;
   color: var(--accent-teal);
 }
 
+pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-dark);
+}
+
 hr {
   border: none;
-  border-top: 2px solid var(--border-color);
-  margin: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  margin: 1.75rem 0;
 }
 
 .page__content {
   color: var(--text-dark);
 }
 
+.sidebar {
+  background: var(--card-bg);
+}
+
 @media (max-width: 768px) {
   .project-header-banner {
-    margin: -1rem -1rem 2rem;
+    margin: -1rem -1rem 1.5rem;
     padding: 2rem 1.5rem;
   }
   
   .project-header-banner h1 {
-    font-size: 1.65rem;
+    font-size: 1.5rem;
   }
   
   .project-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   
   .project-detail-page h2 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
 }
 </style>
@@ -218,7 +243,7 @@ The goal isn't just prediction accuracy—it's building a system that could actu
 ---
 
 <div class="highlight-box">
-<strong>Key Contribution:</strong> This project focuses on the <em>engineering and evaluation challenges</em> of transforming public disclosure data into tradable signals. The hard parts aren't the models—they're the data alignment, leakage prevention, and realistic performance assessment.
+<p><strong>Key Contribution:</strong> This project focuses on the <em>engineering and evaluation challenges</em> of transforming public disclosure data into tradable signals. The hard parts aren't the models—they're the data alignment, leakage prevention, and realistic performance assessment.</p>
 </div>
 
 ---
@@ -241,11 +266,13 @@ This project addresses these challenges systematically.
 ## Data Sources & Scope
 
 ### Primary Data
+
 - **Public company disclosures** published via KAP (Public Disclosure Platform)
 - **Daily OHLCV statistics** from Borsa İstanbul
 - **BIST equity universe** with sufficient trading history and liquidity
 
 ### Data Attribution Note
+
 Raw data ingestion from KAP and BIST is **not my original contribution**. My work begins after raw data is available and focuses on:
 
 - Data cleaning and quality validation
@@ -358,29 +385,34 @@ Multiple label types supported:
 Features are organized into groups, all designed to be **observable at decision time**:
 
 ### Technical Indicators
+
 - RSI (Relative Strength Index)
 - Moving averages (5/10/20-day)
 - Bollinger Bands and volatility measures
 - Price gaps and momentum
 
 ### Volume & Liquidity
+
 - Average daily volume (ADV)
 - Dollar volume and turnover
 - Volume-weighted metrics
 - Money flow indicators
 
 ### Momentum & Mean Reversion
+
 - Short-term returns (1/3/5-day)
 - Long-term trends (20/60-day)
 - Distance from moving averages
 - Reversal signals
 
 ### Cross-Sectional Features
+
 - Percentile ranks within universe
 - Z-scores relative to peer group
 - Sector-relative metrics
 
 ### Event-Based Features
+
 - Disclosure counts (recent windows)
 - Time since last disclosure
 - After-hours disclosure flags
@@ -393,6 +425,7 @@ All features undergo **strict temporal validation** to ensure no look-ahead bias
 ## Modeling Approach
 
 ### Algorithm Choice
+
 **LightGBM** gradient boosted decision trees for:
 
 - Strong performance on tabular data
@@ -401,12 +434,14 @@ All features undergo **strict temporal validation** to ensure no look-ahead bias
 - Built-in feature importance
 
 ### Training Framework
+
 - **Time-series cross-validation** with expanding window
 - **Gap days** between training and validation (prevents leakage)
 - **Walk-forward validation** to simulate production deployment
 - Decision threshold tuning using portfolio-level metrics (not just accuracy)
 
 ### Hyperparameter Optimization
+
 Focus on parameters that matter for generalization:
 
 - Tree depth and number of leaves
@@ -421,12 +456,14 @@ Focus on parameters that matter for generalization:
 Models are evaluated at multiple levels:
 
 ### ML Performance Metrics
+
 - **ROC-AUC:** Ranking quality across all thresholds
 - **Precision-Recall:** Performance at actionable decision points
 - **Information Coefficient (IC):** Rank correlation between predictions and outcomes
 - **Calibration curves:** Are predicted probabilities well-calibrated?
 
 ### Portfolio Backtests
+
 The ultimate test: **Can this actually make money?**
 
 **Strategy:**
@@ -465,6 +502,7 @@ The ultimate test: **Can this actually make money?**
 ## Limitations & Future Work
 
 ### Current Limitations
+
 - **No intraday execution:** All trades assumed at daily close prices
 - **Limited text features:** Disclosure semantics underutilized
 - **Static universe:** No dynamic stock selection based on liquidity
