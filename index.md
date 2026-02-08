@@ -15,7 +15,7 @@ classes: wide
   <div class="section-header">
     <h2>Featured Projects</h2>
   </div>
-  
+
   <div class="project-card">
     <div class="project-card-header">
       <h3>Disclosure-Driven ML Trading (BIST)</h3>
@@ -34,6 +34,4 @@ classes: wide
   </div>
 </div>
 
-<style>
-  @import url('/assets/css/custom.css');
-</style>
+<link rel="stylesheet" href="/assets/css/custom.css">
