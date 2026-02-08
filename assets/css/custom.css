@@ -8,6 +8,41 @@
   --light-bg: #f8f9fa;
   --text-dark: #2c3e50;
   --text-light: #ecf0f1;
+  --bg-color: #ffffff;
+  --card-bg: #ffffff;
+  --border-color: rgba(0,0,0,0.06);
+  --shadow-color: rgba(0,0,0,0.07);
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-dark: #ecf0f1;
+    --text-dark: #ecf0f1;
+    --text-light: #2c3e50;
+    --bg-color: #1a1a2e;
+    --card-bg: #252541;
+    --border-color: rgba(255,255,255,0.1);
+    --shadow-color: rgba(0,0,0,0.3);
+    --light-bg: #1e1e3f;
+  }
+}
+
+/* Manual dark mode toggle - add class to body */
+body.dark-mode {
+  --primary-dark: #ecf0f1;
+  --text-dark: #ecf0f1;
+  --text-light: #2c3e50;
+  --bg-color: #1a1a2e;
+  --card-bg: #252541;
+  --border-color: rgba(255,255,255,0.1);
+  --shadow-color: rgba(0,0,0,0.3);
+  --light-bg: #1e1e3f;
+}
+
+body {
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
 }
 
 /* Typography */
@@ -23,28 +58,33 @@ h1, h2, h3, h4 {
   font-family: 'Space Mono', monospace;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--text-dark);
 }
 
-/* Hero Section Enhancement */
-.page__hero--overlay {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
-  padding: 6rem 0 8rem;
-  margin-bottom: 3rem;
-  position: relative;
-  overflow: hidden;
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--accent-teal);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  z-index: 1000;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-.page__hero--overlay::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(circle at 20% 50%, rgba(22, 160, 133, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(233, 69, 96, 0.1) 0%, transparent 50%);
-  pointer-events: none;
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  background: var(--accent-coral);
 }
 
 /* Custom Home Page Layout */
@@ -57,7 +97,7 @@ h1, h2, h3, h4 {
 .custom-intro h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, var(--primary-dark), var(--accent-teal));
+  background: linear-gradient(135deg, var(--accent-teal), var(--accent-coral));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -104,18 +144,18 @@ h1, h2, h3, h4 {
 
 /* Project Card */
 .project-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.07), 0 12px 24px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px var(--shadow-color), 0 12px 24px var(--shadow-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 2rem;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid var(--border-color);
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 12px rgba(0,0,0,0.1), 0 16px 32px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 12px var(--shadow-color), 0 16px 32px var(--shadow-color);
 }
 
 .project-card-header {
@@ -170,7 +210,7 @@ h1, h2, h3, h4 {
 .project-card-body p {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: #4a5568;
+  color: var(--text-dark);
   margin-bottom: 1.5rem;
 }
 
@@ -187,7 +227,7 @@ h1, h2, h3, h4 {
 
 .project-link:hover {
   gap: 0.75rem;
-  color: var(--primary-blue);
+  color: var(--accent-coral);
 }
 
 .project-link::after {
@@ -208,7 +248,7 @@ h1, h2, h3, h4 {
 }
 
 .project-header-banner {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #1a1a2e 100%);
   margin: -3rem -1.5rem 3rem;
   padding: 4rem 2rem;
   text-align: center;
@@ -252,7 +292,7 @@ h1, h2, h3, h4 {
 
 .content-section h2 {
   font-size: 1.75rem;
-  color: var(--primary-dark);
+  color: var(--text-dark);
   margin-bottom: 1.25rem;
   padding-bottom: 0.75rem;
   border-bottom: 3px solid var(--accent-teal);
@@ -261,7 +301,7 @@ h1, h2, h3, h4 {
 
 .content-section h3 {
   font-size: 1.35rem;
-  color: var(--primary-blue);
+  color: var(--text-dark);
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -270,7 +310,7 @@ h1, h2, h3, h4 {
 .content-section li {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #4a5568;
+  color: var(--text-dark);
 }
 
 .content-section ul {
@@ -313,22 +353,39 @@ code {
   border-radius: 3px;
   font-family: 'Space Mono', monospace;
   font-size: 0.9em;
-  color: var(--primary-blue);
+  color: var(--accent-teal);
+}
+
+pre {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
 }
 
 /* Sidebar author info */
+.sidebar {
+  background: var(--card-bg);
+}
+
 .sidebar .author__avatar {
   border: 3px solid var(--accent-teal);
 }
 
 .author__urls li a {
-  color: var(--primary-blue);
+  color: var(--accent-teal);
   transition: all 0.3s ease;
 }
 
 .author__urls li a:hover {
-  color: var(--accent-teal);
+  color: var(--accent-coral);
   transform: translateX(4px);
+}
+
+/* Page content wrapper */
+.page__content {
+  color: var(--text-dark);
 }
 
 /* Responsive adjustments */
@@ -344,5 +401,12 @@ code {
 
   .section-header h2 {
     font-size: 2rem;
+  }
+
+  .dark-mode-toggle {
+    bottom: 1rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
   }
 }

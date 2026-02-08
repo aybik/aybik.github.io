@@ -1,5 +1,4 @@
 ---
-title: "Hi, I'm Aybike."
 layout: single
 author_profile: true
 classes: wide
@@ -15,7 +14,7 @@ classes: wide
   <div class="section-header">
     <h2>Featured Projects</h2>
   </div>
-
+  
   <div class="project-card">
     <div class="project-card-header">
       <h3>Disclosure-Driven ML Trading (BIST)</h3>
