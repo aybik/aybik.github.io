@@ -4,6 +4,247 @@ author_profile: true
 classes: wide
 ---
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Manrope:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-dark: #1a1a2e;
+  --primary-blue: #0f3460;
+  --accent-teal: #16a085;
+  --accent-coral: #e94560;
+  --bg-color: #ffffff;
+  --card-bg: #ffffff;
+  --text-dark: #2c3e50;
+  --border-color: rgba(0,0,0,0.06);
+  --shadow-color: rgba(0,0,0,0.07);
+}
+
+body.dark-mode {
+  --primary-dark: #ecf0f1;
+  --text-dark: #ecf0f1;
+  --bg-color: #1a1a2e;
+  --card-bg: #252541;
+  --border-color: rgba(255,255,255,0.1);
+  --shadow-color: rgba(0,0,0,0.3);
+}
+
+/* Hide duplicate author name */
+.sidebar .author__name {
+  display: none !important;
+}
+
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+}
+
+.custom-intro {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+
+.custom-intro h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--accent-teal), var(--accent-coral));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.custom-intro p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  font-weight: 300;
+}
+
+.featured-projects {
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 0 1.5rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-teal), var(--accent-coral));
+  border-radius: 2px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px var(--shadow-color), 0 12px 24px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px var(--shadow-color), 0 16px 32px var(--shadow-color);
+}
+
+.project-card-header {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+  padding: 2rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(22, 160, 133, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.project-card-header h3 {
+  color: white;
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.project-tag {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.project-card-body {
+  padding: 2.5rem;
+}
+
+.project-card-body p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-teal);
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  transition: gap 0.3s ease;
+}
+
+.project-link:hover {
+  gap: 0.75rem;
+  color: var(--accent-coral);
+}
+
+.project-link::after {
+  content: '→';
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover::after {
+  transform: translateX(4px);
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--accent-teal);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  z-index: 1000;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  background: var(--accent-coral);
+}
+
+.sidebar {
+  background: var(--card-bg);
+}
+
+.page__content {
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .custom-intro h1 {
+    font-size: 2.5rem;
+  }
+  
+  .project-card-header,
+  .project-card-body {
+    padding: 1.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .dark-mode-toggle {
+    bottom: 1rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+  }
+}
+</style>
+
 <div class="custom-intro">
   <h1>Hi, I'm Aybike.</h1>
   <p>I work with applied data analysis and machine learning, bringing together perspectives from engineering and social sciences. I care deeply about data quality, transparent assumptions, and how analytical results translate into real-world decisions.</p>
@@ -33,4 +274,26 @@ classes: wide
   </div>
 </div>
 
-<link rel="stylesheet" href="/assets/css/custom.css">
+<button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+
+<script>
+const toggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+const currentTheme = localStorage.getItem('theme') || 'light';
+if (currentTheme === 'dark') {
+  body.classList.add('dark-mode');
+  toggle.textContent = '☀️';
+}
+
+toggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  if (body.classList.contains('dark-mode')) {
+    toggle.textContent = '☀️';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    toggle.textContent = '🌙';
+    localStorage.setItem('theme', 'light');
+  }
+});
+</script>
