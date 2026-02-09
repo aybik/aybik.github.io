@@ -308,6 +308,16 @@ This caused:
 
 ---
 
+## System Architecture
+
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/projects/etko/event-classification-architecture.png" alt="Event Classification Architecture" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; background: white;">
+</div>
+
+The classification pipeline integrates seamlessly into Etko's data ingestion workflow, transforming raw event text into structured subcategory labels.
+
+---
+
 ## Dataset & Labeling Strategy
 
 ### Multi-label to Single-label Transformation
@@ -375,6 +385,14 @@ This helped the model learn underrepresented categories without distorting real-
 
 Despite strong class imbalance and semantic overlap between some categories, the model maintains consistent performance across both high-frequency and low-frequency subcategories.
 
+### Confusion Matrix
+
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/projects/etko/confusion-matrix.png" alt="Confusion Matrix (Normalized, Test Set)" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; background: white;">
+</div>
+
+The normalized confusion matrix reveals strong diagonal performance across most categories, with misclassifications concentrated primarily between semantically similar event types.
+
 ### Performance Highlights
 
 - **Theater:** F1 = 0.98 (359 samples)
@@ -397,6 +415,10 @@ The remaining classification errors primarily reflect genuine semantic ambiguity
 ## Production Integration
 
 The model is not a standalone demo—it is integrated as a **first-class pipeline step**.
+
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/projects/etko/pipeline-flow.png" alt="Pipeline Flow Architecture" style="max-width: 600px; height: auto; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; background: white;">
+</div>
 
 ### Runtime Flow
 
