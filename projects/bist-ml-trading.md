@@ -62,7 +62,7 @@ h1, h2, h3, h4 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(circle at 30% 20%, rgba(22, 160, 133, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 70% 80%, rgba(233, 69, 96, 0.15) 0%, transparent 50%);
   pointer-events: none;
@@ -206,15 +206,15 @@ hr {
     margin: -1rem -1rem 1.5rem;
     padding: 2rem 1.5rem;
   }
-  
+
   .project-header-banner h1 {
     font-size: 1.5rem;
   }
-  
+
   .project-subtitle {
     font-size: 0.85rem;
   }
-  
+
   .project-detail-page h2 {
     font-size: 1.25rem;
   }
@@ -230,7 +230,7 @@ hr {
 
 ## Overview
 
-This project investigates whether public company disclosures contain predictive information for short-horizon stock returns on Borsa İstanbul (BIST). 
+This project investigates whether public company disclosures contain predictive information for short-horizon stock returns on Borsa İstanbul (BIST).
 
 I built an end-to-end, leakage-aware machine learning pipeline that:
 
@@ -306,7 +306,7 @@ This ensures that features and labels reflect what was **actually knowable and a
 
 ### 2. Data Leakage Prevention
 
-Financial ML is notorious for leakage—using information that wouldn't have been available when making the prediction. 
+Financial ML is notorious for leakage—using information that wouldn't have been available when making the prediction.
 
 Common mistakes include:
 
@@ -492,7 +492,6 @@ The ultimate test: **Can this actually make money?**
 
 ## Results & Insights
 
-*This section would contain specific findings from your analysis. Since these are specific to your data and results, I'm leaving this for you to fill in. Consider including:*
 
 - Model performance across different horizons
 - Which features are most predictive
@@ -542,9 +541,9 @@ The ultimate test: **Can this actually make money?**
 
 ## Technical Stack
 
-**Languages:** Python  
-**ML Libraries:** LightGBM, scikit-learn, pandas, numpy  
-**Backtesting:** Custom framework with vectorized operations  
+**Languages:** Python
+**ML Libraries:** LightGBM, scikit-learn, pandas, numpy
+**Backtesting:** Custom framework with vectorized operations
 **Validation:** Time-series cross-validation with strict temporal controls
 
 ---
