@@ -417,7 +417,7 @@ The remaining classification errors primarily reflect genuine semantic ambiguity
 The model is not a standalone demo—it is integrated as a **first-class pipeline step**.
 
 <div style="text-align: center; margin: 2rem 0;">
-  <img src="/assets/images/projects/etko/pipeline-flow.png" alt="Pipeline Flow Architecture" style="max-width: 600px; height: auto; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; background: white;">
+  <img src="/assets/images/projects/etko/pipeline-flow.png" alt="Pipeline Flow Architecture" style="max-width: 380px; height: auto; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; background: white;">
 </div>
 
 ### Runtime Flow
