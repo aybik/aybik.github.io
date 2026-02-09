@@ -52,7 +52,7 @@ h1, h2, h3, h4 {
 
 .project-header-banner {
   background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
-  margin: -1rem 0 2rem;
+  margin: -2rem 0 2rem;
   padding: 2.5rem 2rem;
   text-align: center;
   position: relative;
@@ -66,7 +66,7 @@ h1, h2, h3, h4 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(circle at 30% 20%, rgba(22, 160, 133, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 70% 80%, rgba(233, 69, 96, 0.15) 0%, transparent 50%);
   pointer-events: none;
@@ -239,19 +239,19 @@ hr {
     margin: -1rem -1rem 1.5rem;
     padding: 2rem 1.5rem;
   }
-  
+
   .project-header-banner h1 {
     font-size: 1.5rem;
   }
-  
+
   .project-subtitle {
     font-size: 0.85rem;
   }
-  
+
   .project-detail-page h2 {
     font-size: 1.25rem;
   }
-  
+
   .stats-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -267,7 +267,7 @@ hr {
 
 ## Overview
 
-I designed and deployed a BERT-based NLP pipeline that automatically classifies cultural events (concerts, theatre, sports, exhibitions, etc.) into canonical subcategories. 
+I designed and deployed a BERT-based NLP pipeline that automatically classifies cultural events (concerts, theatre, sports, exhibitions, etc.) into canonical subcategories.
 
 The system is fully integrated into Etko's data ingestion pipeline and powers event discovery, filtering, and SEO category pages.
 
