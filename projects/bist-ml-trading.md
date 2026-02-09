@@ -48,7 +48,7 @@ h1, h2, h3, h4 {
 
 .project-header-banner {
   background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
-  margin: -2rem -2rem 2rem;
+  margin: -2rem 0 2rem;
   padding: 2.5rem 2rem;
   text-align: center;
   position: relative;
