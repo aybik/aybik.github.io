@@ -1,5 +1,6 @@
 ---
 layout: single
+title: "Automated Event Subcategory Classification"
 permalink: /projects/etko-event-classification/
 author_profile: true
 classes: wide
@@ -33,7 +34,6 @@ body.dark-mode {
   display: none !important;
 }
 
-/* CRITICAL: Hide the duplicate page title */
 .page__title {
   display: none !important;
 }
@@ -50,32 +50,10 @@ h1, h2, h3, h4 {
   color: var(--text-dark);
 }
 
-/* Fix layout grid */
-.page {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 64em) {
-  .page {
-    grid-template-columns: 300px 1fr;
-    gap: 2rem;
-  }
-  
-  .sidebar {
-    grid-column: 1;
-  }
-  
-  .page__content {
-    grid-column: 2;
-  }
-}
-
 .project-header-banner {
   background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
-  margin: -2rem calc(-50vw + 50%) 2rem;
-  padding: 2.5rem calc(50vw - 50%);
-  max-width: 100vw;
+  margin: -2rem 0 2rem;
+  padding: 2.5rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -113,8 +91,9 @@ h1, h2, h3, h4 {
 }
 
 .project-detail-page {
-  max-width: 100%;
-  padding: 0 1rem 2rem;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
 }
 
 .project-detail-page h2 {
@@ -255,7 +234,7 @@ hr {
   background: var(--card-bg);
 }
 
-@media (max-width: 64em) {
+@media (max-width: 768px) {
   .project-header-banner {
     margin: -1rem -1rem 1.5rem;
     padding: 2rem 1.5rem;
