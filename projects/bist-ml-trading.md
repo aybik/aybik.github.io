@@ -161,15 +161,6 @@ h1, h2, h3, h4 {
   font-weight: 600;
 }
 
-.project-image {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  margin: 1.75rem 0;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px var(--shadow-color);
-  border: 1px solid var(--border-color);
-}
 
 .image-caption {
   text-align: center;
@@ -307,8 +298,12 @@ Raw data ingestion from KAP and BIST is **not my original contribution**. My wor
 
 The system transforms raw market data and disclosures into tradable signals through a structured pipeline:
 
-<img src="/assets/images/projects/bist/pipeline_overview.png" alt="Pipeline architecture diagram" class="project-image">
-<p class="image-caption">End-to-end pipeline: from raw data ingestion to portfolio evaluation</p>
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/projects/bist/pipeline_overview.png"
+       alt="Pipeline architecture diagram"
+       style="max-width: 100%; height: auto; border: 1px solid rgba(0,0,0,0.06); border-radius: 8px; padding: 1rem; background: white;">
+</div>
+
 
 ```
 1. Data Ingestion
@@ -364,8 +359,12 @@ Disclosures arrive at various times:
 - Early market closes and half-days
 - Stock-specific trading halts
 
-<img src="/assets/images/projects/bist/timing_alignment.png" alt="Disclosure timing to tradable timestamp mapping" class="project-image">
-<p class="image-caption">How disclosures at different times map to actual trading opportunities</p>
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/projects/bist/timing_alignment.png"
+       alt="Disclosure timing to tradable timestamp alignment"
+       style="max-width: 100%; height: auto; border: 1px solid rgba(0,0,0,0.06); border-radius: 8px; padding: 1rem; background: white;">
+</div>
+
 
 This ensures that features and labels reflect what was **actually knowable and actionable** at decision time.
 
@@ -388,8 +387,12 @@ Common mistakes include:
 - Manual inspection of feature computation logic
 - Time-series cross-validation with mandatory gap days
 
-<img src="/assets/images/projects/bist/leakage_controls.png" alt="Leakage prevention mechanisms" class="project-image">
-<p class="image-caption">Multi-layered approach to preventing information leakage</p>
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/projects/bist/leakage_controls.png"
+       alt="Leakage prevention mechanisms"
+       style="max-width: 100%; height: auto; border: 1px solid rgba(0,0,0,0.06); border-radius: 8px; padding: 1rem; background: white;">
+</div>
+
 
 ### 3. Realistic Label Construction
 
@@ -453,8 +456,12 @@ Features are organized into groups, all designed to be **observable at decision 
 
 All features undergo **strict temporal validation** to ensure no look-ahead bias.
 
-<img src="/assets/images/projects/bist/feature_importance.png" alt="Top feature importances" class="project-image">
-<p class="image-caption">Top 20 features ranked by LightGBM importance (disclosure-derived feature highlighted)</p>
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/projects/bist/feature_importance.png"
+       alt="Top feature importances from LightGBM model"
+       style="max-width: 100%; height: auto; border: 1px solid rgba(0,0,0,0.06); border-radius: 8px; padding: 1rem; background: white;">
+</div>
+
 
 ---
 
@@ -498,8 +505,12 @@ Models are evaluated at multiple levels:
 - **Information Coefficient (IC):** Rank correlation between predictions and outcomes
 - **Calibration curves:** Are predicted probabilities well-calibrated?
 
-<img src="/assets/images/projects/bist/model_quality_curves.png" alt="ROC and Precision-Recall curves" class="project-image">
-<p class="image-caption">Model quality on holdout test set (D1 horizon)</p>
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/projects/bist/model_quality_curves.png"
+       alt="ROC and Precision-Recall curves"
+       style="max-width: 100%; height: auto; border: 1px solid rgba(0,0,0,0.06); border-radius: 8px; padding: 1rem; background: white;">
+</div>
+
 
 ### Portfolio Backtests
 
@@ -524,8 +535,12 @@ The ultimate test: **Can this actually make money?**
 - Win rate and profit factor
 - Turnover and capacity constraints
 
-<img src="/assets/images/projects/bist/portfolio_backtest.png" alt="Portfolio backtest results" class="project-image">
-<p class="image-caption">Long-only portfolio performance with cumulative equity, drawdown, and position counts</p>
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/images/projects/bist/portfolio_backtest.png"
+       alt="Portfolio backtest performance"
+       style="max-width: 100%; height: auto; border: 1px solid rgba(0,0,0,0.06); border-radius: 8px; padding: 1rem; background: white;">
+</div>
+
 
 ---
 
