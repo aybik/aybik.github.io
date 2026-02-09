@@ -161,6 +161,25 @@ h1, h2, h3, h4 {
   font-weight: 600;
 }
 
+.project-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 1.75rem 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  border: 1px solid var(--border-color);
+}
+
+.image-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--primary-blue);
+  font-style: italic;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
 pre {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -284,68 +303,12 @@ Raw data ingestion from KAP and BIST is **not my original contribution**. My wor
 
 ---
 
-## Core Technical Challenges
-
-### 1. Disclosure Timing & Tradability
-
-Disclosures arrive at various times:
-
-- During trading hours (immediate impact)
-- After market close (next-day tradability)
-- On weekends or holidays (delayed tradability)
-- During trading halts (complex handling)
-
-**Solution:** Every disclosure is anchored to the **first tradable timestamp** using an exchange-aware calendar that accounts for:
-
-- Regular trading days and hours
-- National holidays and religious observances
-- Early market closes and half-days
-- Stock-specific trading halts
-
-This ensures that features and labels reflect what was **actually knowable and actionable** at decision time.
-
-### 2. Data Leakage Prevention
-
-Financial ML is notorious for leakage—using information that wouldn't have been available when making the prediction.
-
-Common mistakes include:
-
-- Computing technical indicators with look-ahead bias
-- Using same-day closing prices for next-day predictions
-- Cross-sectional statistics that include future data
-- Label leakage through feature engineering
-
-**Solution:** Implemented multiple safeguards:
-
-- All price-based features are **strictly lagged**
-- Cross-sectional statistics computed using **only prior-day information**
-- Automated diagnostics to flag potential leakage
-- Manual inspection of feature computation logic
-- Time-series cross-validation with mandatory gap days
-
-### 3. Realistic Label Construction
-
-Labels must represent **tradable forward returns** from decision time T to horizon T+H, accounting for:
-
-- Trading-day counting (not calendar days)
-- Transaction costs and slippage assumptions
-- Stock-specific liquidity constraints
-
-**Implementation:**
-
-- **D1 labels:** Next trading day returns
-- **D5 labels:** Five trading days forward
-- **D20 labels:** Twenty trading days forward
-
-Multiple label types supported:
-
-- Binary classification (above/below threshold)
-- Regression targets (raw returns)
-- Ranking consensus (for portfolio construction)
-
----
-
 ## Pipeline Architecture
+
+The system transforms raw market data and disclosures into tradable signals through a structured pipeline:
+
+<img src="/assets/images/projects/bist/pipeline_overview.png" alt="Pipeline architecture diagram" class="project-image">
+<p class="image-caption">End-to-end pipeline: from raw data ingestion to portfolio evaluation</p>
 
 ```
 1. Data Ingestion
@@ -380,6 +343,73 @@ Multiple label types supported:
    ├── Probability calibration assessment
    └── Portfolio backtests with transaction costs
 ```
+
+---
+
+## Core Technical Challenges
+
+### 1. Disclosure Timing & Tradability
+
+Disclosures arrive at various times:
+
+- During trading hours (immediate impact)
+- After market close (next-day tradability)
+- On weekends or holidays (delayed tradability)
+- During trading halts (complex handling)
+
+**Solution:** Every disclosure is anchored to the **first tradable timestamp** using an exchange-aware calendar that accounts for:
+
+- Regular trading days and hours
+- National holidays and religious observances
+- Early market closes and half-days
+- Stock-specific trading halts
+
+<img src="/assets/images/projects/bist/timing_alignment.png" alt="Disclosure timing to tradable timestamp mapping" class="project-image">
+<p class="image-caption">How disclosures at different times map to actual trading opportunities</p>
+
+This ensures that features and labels reflect what was **actually knowable and actionable** at decision time.
+
+### 2. Data Leakage Prevention
+
+Financial ML is notorious for leakage—using information that wouldn't have been available when making the prediction.
+
+Common mistakes include:
+
+- Computing technical indicators with look-ahead bias
+- Using same-day closing prices for next-day predictions
+- Cross-sectional statistics that include future data
+- Label leakage through feature engineering
+
+**Solution:** Implemented multiple safeguards:
+
+- All price-based features are **strictly lagged**
+- Cross-sectional statistics computed using **only prior-day information**
+- Automated diagnostics to flag potential leakage
+- Manual inspection of feature computation logic
+- Time-series cross-validation with mandatory gap days
+
+<img src="/assets/images/projects/bist/leakage_controls.png" alt="Leakage prevention mechanisms" class="project-image">
+<p class="image-caption">Multi-layered approach to preventing information leakage</p>
+
+### 3. Realistic Label Construction
+
+Labels must represent **tradable forward returns** from decision time T to horizon T+H, accounting for:
+
+- Trading-day counting (not calendar days)
+- Transaction costs and slippage assumptions
+- Stock-specific liquidity constraints
+
+**Implementation:**
+
+- **D1 labels:** Next trading day returns
+- **D5 labels:** Five trading days forward
+- **D20 labels:** Twenty trading days forward
+
+Multiple label types supported:
+
+- Binary classification (above/below threshold)
+- Regression targets (raw returns)
+- Ranking consensus (for portfolio construction)
 
 ---
 
@@ -423,6 +453,9 @@ Features are organized into groups, all designed to be **observable at decision 
 
 All features undergo **strict temporal validation** to ensure no look-ahead bias.
 
+<img src="/assets/images/projects/bist/feature_importance.png" alt="Top feature importances" class="project-image">
+<p class="image-caption">Top 20 features ranked by LightGBM importance (disclosure-derived feature highlighted)</p>
+
 ---
 
 ## Modeling Approach
@@ -465,6 +498,9 @@ Models are evaluated at multiple levels:
 - **Information Coefficient (IC):** Rank correlation between predictions and outcomes
 - **Calibration curves:** Are predicted probabilities well-calibrated?
 
+<img src="/assets/images/projects/bist/model_quality_curves.png" alt="ROC and Precision-Recall curves" class="project-image">
+<p class="image-caption">Model quality on holdout test set (D1 horizon)</p>
+
 ### Portfolio Backtests
 
 The ultimate test: **Can this actually make money?**
@@ -488,16 +524,50 @@ The ultimate test: **Can this actually make money?**
 - Win rate and profit factor
 - Turnover and capacity constraints
 
+<img src="/assets/images/projects/bist/portfolio_backtest.png" alt="Portfolio backtest results" class="project-image">
+<p class="image-caption">Long-only portfolio performance with cumulative equity, drawdown, and position counts</p>
+
 ---
 
 ## Results & Insights
 
+### Performance Metrics (D1 Horizon)
 
-- Model performance across different horizons
-- Which features are most predictive
-- Performance across different market regimes
-- Transaction cost sensitivity analysis
-- Comparison to simple baselines
+**Cross-Validation (5 folds with gap days):**
+
+- Mean ROC-AUC: **0.538**
+- Mean Average Precision: **0.519**
+- Mean CV Sharpe (threshold-tuned): **0.899**
+
+**Holdout Test Set:**
+
+- ROC-AUC: **0.513**
+- Average Precision: **0.489**
+
+### Interpretation
+
+The results show a **modest but real predictive edge** that is typical for equity return prediction tasks:
+
+- The model achieves better-than-random ranking (ROC-AUC > 0.5) but the signal is weak
+- Performance is **unstable across folds**, indicating sensitivity to market regime
+- The gap between CV and holdout suggests some degree of overfitting despite precautions
+- Sharpe ratios from threshold-tuned portfolios are positive but would likely degrade with realistic slippage
+
+### Key Findings
+
+**Feature Importance:**
+
+- Price-based momentum and mean-reversion features dominate
+- Disclosure event counts (`disclosure_count_7d`) appear in top 20 features
+- Cross-sectional rankings (z-scores, percentiles) provide incremental value
+- Short-lag returns (`close_lag1_ret`, `close_lag2_ret`) are most predictive
+
+**Challenges Encountered:**
+
+- **Regime sensitivity:** Model performance varies significantly across market conditions
+- **Transaction cost sensitivity:** Small improvements in prediction easily erased by realistic costs
+- **Signal decay:** Predictive power is strongest at D1 horizon and weakens at D5/D20
+- **Disclosure signal:** Event-based features show promise but are not individually dominant
 
 ---
 
@@ -506,9 +576,11 @@ The ultimate test: **Can this actually make money?**
 ### Current Limitations
 
 - **No intraday execution:** All trades assumed at daily close prices
-- **Limited text features:** Disclosure semantics underutilized
+- **Limited text features:** Disclosure semantics underutilized (only event counts/timing used)
 - **Static universe:** No dynamic stock selection based on liquidity
 - **Regime-agnostic:** Single model for all market conditions
+- **Simplified transaction costs:** Basic bid-ask + commission model
+- **Long/short mode:** Documented but not fully implemented in current backtest
 
 ### Potential Extensions
 
@@ -536,6 +608,7 @@ The ultimate test: **Can this actually make money?**
 - Stress testing across crisis periods
 - Sensitivity to feature engineering choices
 - Out-of-sample validation on new time periods
+- Turnover-aware cost accounting
 
 ---
 
@@ -554,6 +627,7 @@ The ultimate test: **Can this actually make money?**
 2. **Realistic evaluation matters:** ML metrics don't guarantee trading profitability
 3. **Feature engineering > model selection:** Time spent on thoughtful features beats hyperparameter tuning
 4. **Production constraints are first-class concerns:** Build evaluation that reflects real deployment from day one
+5. **Modest signals are the reality:** In competitive markets, even small edges require careful engineering to extract
 
 ---
 
