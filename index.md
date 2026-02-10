@@ -304,6 +304,23 @@ h1, h2, h3, h4 {
   </div>
 </div>
 
+<div class="project-card">
+    <div class="project-card-header">
+      <h3>Automated Artist Page Generation (Etko)</h3>
+      <div class="project-tags">
+        <span class="project-tag">LLM Extraction</span>
+        <span class="project-tag">SEO Automation</span>
+        <span class="project-tag">Production Pipeline</span>
+        <span class="project-tag">Multi-Source Context</span>
+      </div>
+    </div>
+    <div class="project-card-body">
+      <p>An LLM-powered pipeline that automatically extracts artists from unstructured event data and generates high-quality artist pages with biographies and SEO metadata. Combines OpenAI structured outputs with external signals from Spotify, Last.fm, and Wikipedia.</p>
+      <p>Integrated into Etko's production ingestion flow, powering artist discovery, search relevance, and follow features across the platform.</p>
+      <a href="/projects/etko-artist-pages/" class="project-link">Explore the project</a>
+    </div>
+  </div>
+
 <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
 
 <script>

@@ -11,4 +11,10 @@ Event-aware ML pipeline using public disclosures and leakage-safe evaluation on 
 
 ---
 
-*More projects coming soon...*
+### [Automated Event Classification (Etko)](/projects/etko-event-classification/)
+A BERT-based NLP system that automatically classifies cultural events canonical subcategories.
+
+---
+
+### [Automated Artist Page Generation (Etko)](/projects/etko-artist-pages/)
+LLM-powered artist extraction and biography enrichment pipeline for automated artist page creation.
