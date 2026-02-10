@@ -1,34 +1,28 @@
-<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="1600" fill="#000000"/>
+<svg width="1120" height="1600" viewBox="0 0 1120 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1120" height="1600" fill="#000000"/>
 
-  <text x="70" y="100" fill="#0B1B45" font-family="Manrope, Inter, Arial, sans-serif" font-size="64" font-weight="800">Orchestrator to Extraction to Artist Page</text>
-  <text x="70" y="145" fill="#263A67" font-family="Manrope, Inter, Arial, sans-serif" font-size="36" font-weight="500">Single-run flow for artist extraction, enrichment, and page serving.</text>
+  <text x="64" y="84" fill="#081B47" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700">Orchestrator to Inference to Artist DB</text>
+  <text x="64" y="124" fill="#263A67" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400">Single-run control flow for extraction, enrichment, and DB-backed artist pages.</text>
 
-  <g>
-    <rect x="120" y="220" width="960" height="360" rx="18" fill="#C8D2E0" stroke="#20345F" stroke-width="4"/>
-    <line x1="120" y1="300" x2="1080" y2="300" stroke="#2A3C60" stroke-width="4"/>
-    <text x="600" y="275" text-anchor="middle" fill="#17233A" font-family="Manrope, Inter, Arial, sans-serif" font-size="56" font-weight="800">Pipeline Orchestrator</text>
-    <text x="600" y="430" text-anchor="middle" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="64">main.py -&gt; run_source_mappers()</text>
-  </g>
+  <rect x="110" y="220" width="900" height="360" rx="16" fill="#BEC9DA" stroke="#243A66" stroke-width="4"/>
+  <line x1="110" y1="300" x2="1010" y2="300" stroke="#5A6B8B" stroke-width="4"/>
+  <text x="560" y="274" text-anchor="middle" fill="#18233C" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">Pipeline Orchestrator</text>
+  <text x="560" y="430" text-anchor="middle" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="44">main.py -> run_source_mappers()</text>
 
-  <line x1="600" y1="580" x2="600" y2="665" stroke="#1E49C8" stroke-width="10"/>
-  <polygon points="565,665 635,665 600,760" fill="#1E49C8"/>
+  <line x1="560" y1="580" x2="560" y2="660" stroke="#1E49C8" stroke-width="10"/>
+  <polygon points="525,660 595,660 560,760" fill="#1E49C8"/>
 
-  <g>
-    <rect x="120" y="760" width="960" height="360" rx="18" fill="#E6DDD1" stroke="#20345F" stroke-width="4"/>
-    <line x1="120" y1="840" x2="1080" y2="840" stroke="#2A3C60" stroke-width="4"/>
-    <text x="600" y="815" text-anchor="middle" fill="#17233A" font-family="Manrope, Inter, Arial, sans-serif" font-size="56" font-weight="800">AI Extraction + Mapping</text>
-    <text x="600" y="955" text-anchor="middle" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="56">Load extractor -&gt; Batch infer</text>
-    <text x="600" y="1025" text-anchor="middle" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="56">Upsert artists + relations</text>
-  </g>
+  <rect x="110" y="760" width="900" height="360" rx="16" fill="#E3DACE" stroke="#243A66" stroke-width="4"/>
+  <line x1="110" y1="840" x2="1010" y2="840" stroke="#5A6B8B" stroke-width="4"/>
+  <text x="560" y="814" text-anchor="middle" fill="#18233C" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">AI / Inference</text>
+  <text x="560" y="958" text-anchor="middle" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="44">Load extractors -> Batch inference</text>
+  <text x="560" y="1028" text-anchor="middle" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="44">Upsert artist relationships</text>
 
-  <line x1="600" y1="1120" x2="600" y2="1205" stroke="#1E49C8" stroke-width="10"/>
-  <polygon points="565,1205 635,1205 600,1300" fill="#1E49C8"/>
+  <line x1="560" y1="1120" x2="560" y2="1200" stroke="#1E49C8" stroke-width="10"/>
+  <polygon points="525,1200 595,1200 560,1300" fill="#1E49C8"/>
 
-  <g>
-    <rect x="120" y="1300" width="960" height="250" rx="18" fill="#D4E2DA" stroke="#20345F" stroke-width="4"/>
-    <line x1="120" y1="1380" x2="1080" y2="1380" stroke="#2A3C60" stroke-width="4"/>
-    <text x="600" y="1355" text-anchor="middle" fill="#17233A" font-family="Manrope, Inter, Arial, sans-serif" font-size="56" font-weight="800">Description + Serving Layer</text>
-    <text x="600" y="1478" text-anchor="middle" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="56">Generate bio/SEO -&gt; API/RPC artist pages</text>
-  </g>
+  <rect x="110" y="1300" width="900" height="250" rx="16" fill="#C6D5CE" stroke="#243A66" stroke-width="4"/>
+  <line x1="110" y1="1380" x2="1010" y2="1380" stroke="#5A6B8B" stroke-width="4"/>
+  <text x="560" y="1352" text-anchor="middle" fill="#18233C" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">Database + Serving Layer</text>
+  <text x="560" y="1462" text-anchor="middle" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="42">Generate bio/SEO -> API/RPC artist pages</text>
 </svg>

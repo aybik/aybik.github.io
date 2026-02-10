@@ -1,55 +1,56 @@
 <svg width="2000" height="560" viewBox="0 0 2000 560" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="2000" height="560" fill="#000000"/>
 
-  <text x="60" y="78" fill="#0B1B45" font-family="Manrope, Inter, Arial, sans-serif" font-size="58" font-weight="800">Artist Page Generation Flow</text>
-  <text x="60" y="118" fill="#263A67" font-family="Manrope, Inter, Arial, sans-serif" font-size="22" font-weight="500">From raw source sessions to extracted artist graph and SEO-ready artist pages.</text>
+  <text x="60" y="82" fill="#081B47" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">Artist Page Generation Flow</text>
+  <text x="60" y="120" fill="#263A67" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Ticketing text is mapped to artists, enriched, and published as SEO-ready artist pages.</text>
 
-  <g>
-    <rect x="40" y="160" width="330" height="250" rx="16" fill="#C8D2E0" stroke="#20345F" stroke-width="4"/>
-    <text x="68" y="214" fill="#17233A" font-family="Manrope, Inter, Arial, sans-serif" font-size="48" font-weight="800">Ticketing Sources</text>
-    <text x="68" y="268" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">Biletix, Passo,</text>
-    <text x="68" y="304" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">Bubilet and</text>
-    <text x="68" y="340" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">other feeds</text>
-  </g>
+  <!-- Box 1 -->
+  <rect x="40" y="160" width="300" height="250" rx="16" fill="#BEC9DA" stroke="#243A66" stroke-width="4"/>
+  <text x="66" y="212" fill="#18233C" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Ticketing Sources</text>
+  <text x="66" y="262" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="24">Biletix, Passo,</text>
+  <text x="66" y="296" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="24">Bubilet and</text>
+  <text x="66" y="330" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="24">other feeds</text>
 
-  <polygon points="370,246 452,285 370,324" fill="#1E49C8"/>
+  <!-- Arrow 1: touches box2 at x=460 -->
+  <line x1="340" y1="285" x2="442" y2="285" stroke="#1E49C8" stroke-width="8"/>
+  <polygon points="442,263 460,285 442,307" fill="#1E49C8"/>
 
-  <g>
-    <rect x="440" y="160" width="330" height="250" rx="16" fill="#C8D2E0" stroke="#20345F" stroke-width="4"/>
-    <text x="468" y="214" fill="#17233A" font-family="Manrope, Inter, Arial, sans-serif" font-size="48" font-weight="800">Source Sessions</text>
-    <text x="468" y="268" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">Raw event name</text>
-    <text x="468" y="304" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">description, details</text>
-    <text x="468" y="340" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">and venue context</text>
-  </g>
+  <!-- Box 2 -->
+  <rect x="460" y="160" width="300" height="250" rx="16" fill="#BEC9DA" stroke="#243A66" stroke-width="4"/>
+  <text x="486" y="212" fill="#18233C" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Source Sessions</text>
+  <text x="486" y="262" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="24">Raw event name</text>
+  <text x="486" y="296" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="24">and description</text>
 
-  <polygon points="770,246 852,285 770,324" fill="#1E49C8"/>
+  <!-- Arrow 2: touches box3 at x=880 -->
+  <line x1="760" y1="285" x2="862" y2="285" stroke="#1E49C8" stroke-width="8"/>
+  <polygon points="862,263 880,285 862,307" fill="#1E49C8"/>
 
-  <g>
-    <rect x="840" y="130" width="520" height="280" rx="16" fill="#E6DDD1" stroke="#20345F" stroke-width="4"/>
-    <text x="870" y="182" fill="#17233A" font-family="Manrope, Inter, Arial, sans-serif" font-size="48" font-weight="800">Artist Extraction + Enrichment</text>
-    <text x="870" y="238" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">OpenAI Concert + Stand-up extractors</text>
-    <text x="870" y="280" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">Map to artists_sessions and artists_events</text>
-    <text x="870" y="322" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24" font-style="italic">Input: session name + description</text>
-    <text x="870" y="360" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24" font-style="italic">Output: artist graph + bio + SEO metadata</text>
-  </g>
+  <!-- Box 3 -->
+  <rect x="880" y="130" width="500" height="280" rx="16" fill="#E3DACE" stroke="#243A66" stroke-width="4"/>
+  <text x="906" y="184" fill="#18233C" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Artist Extraction + Enrichment</text>
+  <text x="906" y="226" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="18">OpenAI concert + stand-up parsing</text>
+  <text x="906" y="270" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="18" font-style="italic">Input: name + description</text>
+  <text x="906" y="304" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="18" font-style="italic">Output: artists + bio + SEO</text>
 
-  <polygon points="1360,246 1442,285 1360,324" fill="#1E49C8"/>
+  <!-- Arrow 3: touches box4 at x=1500 -->
+  <line x1="1380" y1="285" x2="1482" y2="285" stroke="#1E49C8" stroke-width="8"/>
+  <polygon points="1482,263 1500,285 1482,307" fill="#1E49C8"/>
 
-  <g>
-    <rect x="1430" y="160" width="300" height="250" rx="16" fill="#D4E2DA" stroke="#20345F" stroke-width="4"/>
-    <text x="1460" y="214" fill="#17233A" font-family="Manrope, Inter, Arial, sans-serif" font-size="48" font-weight="800">Artist Graph</text>
-    <text x="1460" y="268" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">UUID mapping</text>
-    <text x="1460" y="304" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">and normalized</text>
-    <text x="1460" y="340" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">relationships</text>
-  </g>
+  <!-- Box 4 -->
+  <rect x="1500" y="160" width="250" height="250" rx="16" fill="#C6D5CE" stroke="#243A66" stroke-width="4"/>
+  <text x="1524" y="212" fill="#18233C" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Artist IDs</text>
+  <text x="1524" y="262" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="24">UUID mapping</text>
+  <text x="1524" y="296" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="24">and normalized</text>
+  <text x="1524" y="330" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="24">links</text>
 
-  <polygon points="1730,246 1792,285 1730,324" fill="#1E49C8"/>
+  <!-- Arrow 4: touches box5 at x=1840 -->
+  <line x1="1750" y1="285" x2="1822" y2="285" stroke="#1E49C8" stroke-width="8"/>
+  <polygon points="1822,263 1840,285 1822,307" fill="#1E49C8"/>
 
-  <g>
-    <rect x="1780" y="160" width="190" height="250" rx="16" fill="#D4E2DA" stroke="#20345F" stroke-width="4"/>
-    <text x="1808" y="214" fill="#17233A" font-family="Manrope, Inter, Arial, sans-serif" font-size="46" font-weight="800">Artist</text>
-    <text x="1808" y="260" fill="#17233A" font-family="Manrope, Inter, Arial, sans-serif" font-size="46" font-weight="800">Pages</text>
-    <text x="1808" y="316" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">SEO-ready</text>
-    <text x="1808" y="352" fill="#283649" font-family="Manrope, Inter, Arial, sans-serif" font-size="24">web/mobile</text>
-  </g>
+  <!-- Box 5 -->
+  <rect x="1840" y="160" width="160" height="250" rx="16" fill="#C6D5CE" stroke="#243A66" stroke-width="4"/>
+  <text x="1864" y="212" fill="#18233C" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Artist</text>
+  <text x="1864" y="244" fill="#18233C" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Pages</text>
+  <text x="1864" y="292" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="24">SEO-ready</text>
+  <text x="1864" y="326" fill="#2A374C" font-family="Arial, Helvetica, sans-serif" font-size="24">output</text>
 </svg>
