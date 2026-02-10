@@ -427,7 +427,7 @@ Stand-up and music paths use different prompts and context strategies.
 
 This is a production pipeline step, not a one-off script.
 <div style="text-align: center; margin: 2rem 0;">
-  <img src="/assets/images/projects/etko/artist-pipeline-flow.png" alt="Artist Pipeline Flow" style="max-width: 420px; height: auto; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; background: white;">
+  <img src="/assets/images/projects/etko/artist-pipeline-flow.png" alt="Artist Pipeline Flow" style="max-width: 520px; height: auto; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; background: white;">
 </div>
 
 

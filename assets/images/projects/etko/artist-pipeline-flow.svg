@@ -1,7 +1,7 @@
 <svg width="1120" height="1600" viewBox="0 0 1120 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
 
   <text x="64" y="84" fill="#081B47" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700">Orchestrator to Inference to Artist DB</text>
-  <text x="64" y="124" fill="#263A67" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400">Single-run control flow for extraction, enrichment, and DB-backed artist pages.</text>
+  <text x="64" y="136" fill="#263A67" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400">Single-run control flow for extraction, enrichment, and DB-backed artist pages.</text>
 
   <rect x="110" y="220" width="900" height="360" rx="16" fill="#BEC9DA" stroke="#243A66" stroke-width="4"/>
   <line x1="110" y1="300" x2="1010" y2="300" stroke="#5A6B8B" stroke-width="4"/>
