@@ -302,7 +302,6 @@ h1, h2, h3, h4 {
       <a href="/projects/etko-event-classification/" class="project-link">Explore the project</a>
     </div>
   </div>
-</div>
 
 <div class="project-card">
     <div class="project-card-header">
