@@ -6,6 +6,11 @@ author_profile: true
 
 ## All Projects
 
+### [Groundwater Level Forecasting System](/projects/groundwater-forecasting/)
+Production-ready multi-horizon groundwater forecasting pipeline with robust ML, uncertainty estimates, and monitoring-oriented deployment outputs.
+
+---
+
 ### [Disclosure-Driven ML Trading (BIST)](/projects/bist-ml-trading/)
 Event-aware ML pipeline using public disclosures and leakage-safe evaluation on Borsa İstanbul.
 

@@ -320,6 +320,24 @@ h1, h2, h3, h4 {
     </div>
   </div>
 
+  <div class="project-card">
+    <div class="project-card-header">
+      <h3>Groundwater Level Forecasting</h3>
+      <div class="project-tags">
+        <span class="project-tag">Time Series</span>
+        <span class="project-tag">Forecasting</span>
+        <span class="project-tag">Production ML</span>
+        <span class="project-tag">Uncertainty</span>
+      </div>
+    </div>
+    <div class="project-card-body">
+      <p>A production-ready ML forecasting system for groundwater monitoring across 7, 14, 21, and 28-day horizons. Built with robust feature engineering, strict chronological validation, and deployment-safe model packaging.</p>
+      <p>Includes uncertainty-aware prediction intervals, alert-level risk monitoring, and operational JSON outputs designed for real-world usage under limited-data constraints.</p>
+      <a href="/projects/groundwater-forecasting/" class="project-link">Explore the project</a>
+    </div>
+  </div>
+
+
 <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
 
 <script>
