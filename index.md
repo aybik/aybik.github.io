@@ -261,7 +261,7 @@ h1, h2, h3, h4 {
 <div class="custom-intro">
   <h1>Hi, I'm Aybike.</h1>
   <p>I work with applied data analysis and machine learning, bringing together perspectives from engineering and social sciences. I care deeply about data quality, transparent assumptions, and how analytical results translate into real-world decisions.</p>
-  <p>My focus is on building ML systems that work in practice—not just in notebooks—with particular attention to evaluation frameworks that reflect actual deployment constraints.</p>
+  <p>I focus on building ML systems that hold up outside notebooks, with evaluation frameworks that reflect real deployment constraints.</p>
 </div>
 
 <div class="featured-projects">
