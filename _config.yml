@@ -2,6 +2,7 @@ title: "Aybike Alkan"
 description: "Data Science • Applied ML • Research"
 url: "https://aybik.github.io"
 baseurl: ""
+masthead_title: false
 
 remote_theme: "mmistakes/minimal-mistakes"
 
