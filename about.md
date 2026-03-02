@@ -2,6 +2,7 @@
 layout: single
 title: "About"
 author_profile: true
+permalink: /about/
 ---
 
 I work at the intersection of data science, engineering, and social research, with a focus on how technical systems are designed, evaluated, and used in practice.
