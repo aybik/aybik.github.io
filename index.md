@@ -271,23 +271,6 @@ h1, h2, h3, h4 {
 
   <div class="project-card">
     <div class="project-card-header">
-      <h3>Disclosure-Driven ML Trading (BIST)</h3>
-      <div class="project-tags">
-        <span class="project-tag">Event-Aware ML</span>
-        <span class="project-tag">Time-Series CV</span>
-        <span class="project-tag">Leakage Prevention</span>
-        <span class="project-tag">Realistic Backtesting</span>
-      </div>
-    </div>
-    <div class="project-card-body">
-      <p>An end-to-end ML pipeline that transforms public company disclosures into tradable signals on Borsa İstanbul. Features rigorous leakage prevention, exchange-aware timestamp alignment, and portfolio-level evaluation that accounts for real trading constraints.</p>
-      <p>This project demonstrates practical ML engineering: from messy real-world data to production-ready signals, with evaluation metrics that matter for actual deployment.</p>
-      <a href="/projects/bist-ml-trading/" class="project-link">Explore the project</a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-card-header">
       <h3>Automated Event Classification (Etko)</h3>
       <div class="project-tags">
         <span class="project-tag">BERT</span>
